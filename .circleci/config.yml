@@ -18,7 +18,7 @@ jobs:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: echo" XXX— Did we run everything?"
+      - run: echo "XXX— Did we run everything?"
 workflows:
   build-workflow:
     jobs:
