@@ -6,12 +6,12 @@ jobs:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: echo "XXX— Hi This is the cloud"
+      - run: echo "XXX— Hi This is the cloud on $HOST"
   lab-test:
     machine: true
     resource_class: orlenko/sample-local-station-runner
     steps:
-      - run: echo "XXX— Hello there, I am running on the local machine"
+      - run: echo "XXX— Hello there, I am running on the local machine $HOST"
   build:
     machine:
       image: ubuntu-2004:202111-02
