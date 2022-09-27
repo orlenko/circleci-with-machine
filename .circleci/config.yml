@@ -18,7 +18,11 @@ jobs:
       - run: echo "XXX— Hello there, I am running on the local machine $HOST"
       - run:
           name: Run the local script
-          command: src/runlocal.sh
+          command: |
+            src/runlocal.sh
+            src/test-on-machine.sh
+      - store_test_results:
+          path: src/test-ci
   build:
     machine:
       image: ubuntu-2004:202111-02
