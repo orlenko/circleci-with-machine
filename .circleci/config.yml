@@ -12,6 +12,7 @@ jobs:
     resource_class: orlenko/sample-local-station-runner
     steps:
       - run: echo "XXX— Hello there, I am running on the local machine $HOST"
+      - run: echo $HOST
   build:
     machine:
       image: ubuntu-2004:202111-02
