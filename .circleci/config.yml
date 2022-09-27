@@ -7,17 +7,27 @@ jobs:
     steps:
       - checkout
       - run: echo "XXX— Hi This is the cloud on host $HOST"
+      - run:
+          name: Run the local script
+          command: src/runlocal.sh
   lab-test:
     machine: true
     resource_class: orlenko/sample-local-station-runner
     steps:
+      - checkout
       - run: echo "XXX— Hello there, I am running on the local machine $HOST"
+      - run:
+          name: Run the local script
+          command: src/runlocal.sh
   build:
     machine:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
       - run: echo "XXX— Did we run everything?"
+      - run:
+          name: Run the local script
+          command: src/runlocal.sh
 workflows:
   build-workflow:
     jobs:
