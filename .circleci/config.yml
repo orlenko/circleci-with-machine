@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  cloud-build:
+    steps:
+      - checkout
+      - run: echo "XXX: Hi This is the cloud"
+  lab-test:
+    machine: true
+    resource_class: orlenko/sample-local-station-runner
+    steps:
+      - run: echo "XXX: Hello there, I am running on the local machine"
+workflows:
+  build-workflow:
+    jobs:
+      - cloud-build
+      - lab-test
+      - build:
+          requires:
+            - cloud-build
+            - lab-test
