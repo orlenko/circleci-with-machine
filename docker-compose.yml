@@ -1,0 +1,15 @@
+version: "2.3"
+
+services:
+  agent:
+    build: ./agent
+    networks:
+      - internal
+  ui:
+    build: ./ui
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge

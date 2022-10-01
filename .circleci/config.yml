@@ -12,7 +12,7 @@ jobs:
           command: src/runlocal.sh
   lab-test:
     machine: true
-    resource_class: orlenko/sample-local-station-runner
+    resource_class: orlenko/sample-local-station-runner2
     steps:
       - checkout
       - run: echo "XXX— Hello there, I am running on the local machine $HOST"
