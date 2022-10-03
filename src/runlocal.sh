@@ -9,6 +9,3 @@ whoami
 
 echo "Running ls -la / ..."
 ls -la /
-
-echo "Running apt install"
-apt install -y vim

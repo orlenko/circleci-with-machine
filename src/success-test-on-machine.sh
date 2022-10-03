@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+echo "Running apt install"
+sudo apt install -y vim
+
+
 echo "generating test output..."
 
 cat <<EOF >> src/test-ci/test-results.xml
