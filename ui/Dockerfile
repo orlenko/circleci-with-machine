@@ -2,9 +2,10 @@ FROM ubuntu:20.04
 
 ENV COMPONENTNAME="ui"
 
-RUN apt update \
-  && apt install -y \
+RUN sudo apt-get update \
+  && sudo apt-get install --no-install-recommends -y \
     vim \
+    git \
     bash \
     python3 \
     nodejs \

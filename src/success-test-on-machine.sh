@@ -2,7 +2,10 @@
 
 
 echo "Running apt install"
-sudo apt update && sudo apt install -y vim
+sudo apt update && sudo apt install -y vim wget curl
+
+echo "Running curl to the UI container..."
+curl http://ui:3000/
 
 
 echo "generating test output..."

@@ -3,6 +3,8 @@ version: "2.3"
 services:
   agent:
     image: circleci/runner:launch-agent
+    depends_on:
+      - ui
     networks:
       - internal
     environment:
@@ -11,9 +13,11 @@ services:
       - LAUNCH_AGENT_RUNNER_NAME=SampleRunnerInDocker
     container_name: SampleRunnerInDocker
   ui:
-    build: ./ui
+    image: browserless/chrome:latest
     networks:
       - internal
+    ports:
+      - "3000:3000"
 
 networks:
   internal:
