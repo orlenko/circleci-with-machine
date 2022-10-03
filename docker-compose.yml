@@ -5,6 +5,11 @@ services:
     build: ./agent
     networks:
       - internal
+    environment:
+      - CIRCLECI_API_TOKEN=19cd699b16deb6c13089fb06600053a8451ee6461d603e51675df39ca27618856606459ba571bd94
+      - CIRCLECI_RESOURCE_CLASS=orlenko/sample-local-station-runner2
+      - LAUNCH_AGENT_RUNNER_NAME=SampleRunnerInDocker
+    container_name: SampleRunnerInDocker
   ui:
     build: ./ui
     networks:

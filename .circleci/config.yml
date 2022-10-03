@@ -6,7 +6,7 @@ jobs:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: echo "XXX— Hi This is the cloud on host $HOST"
+      - run: echo "Hi, This is the cloud build"
       - run:
           name: Run the local script
           command: src/runlocal.sh
@@ -15,12 +15,13 @@ jobs:
     resource_class: orlenko/sample-local-station-runner2
     steps:
       - checkout
-      - run: echo "XXX— Hello there, I am running on the local machine $HOST"
+      - run: echo "Hello there, I am running on the local machine $HOST"
       - run:
           name: Run the local script
           command: |
             src/runlocal.sh
             src/test-on-machine.sh
+            run-test.sh
       - store_test_results:
           path: src/test-ci
   build:
@@ -28,7 +29,7 @@ jobs:
       image: ubuntu-2004:202111-02
     steps:
       - checkout
-      - run: echo "XXX— Did we run everything?"
+      - run: echo "Did we run everything?"
       - run:
           name: Run the local script
           command: src/runlocal.sh
