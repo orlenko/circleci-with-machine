@@ -2,10 +2,15 @@
 
 
 echo "Running apt install"
-sudo apt update && sudo apt install -y vim wget curl
+sudo apt update && sudo apt install -y vim wget curl nodejs npm
 
 echo "Running curl to the UI container..."
 curl http://ui:3000/
+
+
+echo "Installing puppeteer"
+npm i puppeteer
+node puppettest.js
 
 
 echo "generating test output..."
