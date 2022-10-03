@@ -20,7 +20,7 @@ jobs:
           name: Run the local script
           command: |
             src/runlocal.sh
-            src/test-on-machine.sh
+            src/success-test-on-machine.sh
             run-test.sh
       - store_test_results:
           path: src/test-ci
