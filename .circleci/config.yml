@@ -21,7 +21,6 @@ jobs:
           command: |
             src/runlocal.sh
             src/success-test-on-machine.sh
-            run-test.sh
       - store_test_results:
           path: src/test-ci
   build:
