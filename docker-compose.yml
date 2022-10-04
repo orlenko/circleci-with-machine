@@ -4,7 +4,7 @@ services:
   agent:
     image: circleci/runner:launch-agent
     depends_on:
-      - chrome
+      - selchrome
     networks:
       - internal
     environment:
@@ -18,7 +18,7 @@ services:
   #     - internal
   #   ports:
   #     - "3000:3000"
-  chrome:
+  selchrome:
     image: selenium/standalone-chrome:latest
     shm_size: 2gb
     networks:

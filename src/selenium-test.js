@@ -3,7 +3,7 @@ var capabilities = Capabilities.chrome();
 
 (async function helloSelenium() {
   let driver = new Builder()
-        .usingServer("http://localhost:4444")
+        .usingServer("http://selchrome:4444")
         .withCapabilities(capabilities)
         .build();
     try {
