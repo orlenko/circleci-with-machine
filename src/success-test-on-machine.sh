@@ -10,6 +10,9 @@ sudo apt update && sudo apt install -y vim wget curl nodejs npm
 BASEDIR=$(dirname "$0")
 echo "base dir is ${BASEDIR}"
 
+echo "does the selchrome exist?"
+curl http://selchrome:4444 || { echo "curl failed" ; exit 1 ; }
+
 echo "Installing selenium-webdriver"
 npm install selenium-webdriver || { echo "Failed to install selenium-webdirver" ; exit 1 ; }
 node ${BASEDIR}/selenium-test.js || { echo "Failed to run the test script" ; exit 1 ; }
