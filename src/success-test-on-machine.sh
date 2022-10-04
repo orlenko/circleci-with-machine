@@ -11,8 +11,8 @@ BASEDIR=$(dirname "$0")
 echo "base dir is ${BASEDIR}"
 
 echo "Installing selenium-webdriver"
-npm install selenium-webdriver
-node ${BASEDIR}/selenium-test.js
+npm install selenium-webdriver || { echo "Failed to install selenium-webdirver" ; exit 1 ; }
+node ${BASEDIR}/selenium-test.js || { echo "Failed to run the test script" ; exit 1 ; }
 
 
 echo "generating test output..."
