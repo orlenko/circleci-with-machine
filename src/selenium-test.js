@@ -1,3 +1,4 @@
+const { exit } = require("process");
 const { Builder, Capabilities } = require("selenium-webdriver");
 var capabilities = Capabilities.chrome();
 
@@ -14,5 +15,6 @@ var capabilities = Capabilities.chrome();
       console.error('Unexpected!', e);
     } finally {
         await driver.quit();
+        exit(1);
     }
 })();
