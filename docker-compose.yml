@@ -1,39 +1,29 @@
 version: "3"
 
 services:
+
   agent:
     image: circleci/runner:launch-agent
     depends_on:
       - selchrome
     networks:
-      - internal
+      - external
     environment:
       - CIRCLECI_API_TOKEN=19cd699b16deb6c13089fb06600053a8451ee6461d603e51675df39ca27618856606459ba571bd94
       - CIRCLECI_RESOURCE_CLASS=orlenko/sample-local-station-runner2
       - LAUNCH_AGENT_RUNNER_NAME=SampleRunnerInDocker
     container_name: SampleRunnerInDocker
-  # ui:
-  #   image: browserless/chrome:latest
-  #   networks:
-  #     - internal
-  #   ports:
-  #     - "3000:3000"
+
   selchrome:
     image: selenium/standalone-chrome:latest
     shm_size: 2gb
     networks:
-      - internal
+      external:
+        aliases:
+          - selchrome
     ports:
       - "4444:4444"
 
-  # hub:
-  #   image: selenium/hub:latest
-  #   container_name: hub
-  #   ports:
-  #     - "4442:4442"
-  #     - "4443:4443"
-  #     - "4444:4444"
-
 networks:
-  internal:
+  external:
     driver: bridge
