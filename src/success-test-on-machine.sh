@@ -4,13 +4,15 @@
 echo "Running apt install"
 sudo apt update && sudo apt install -y vim wget curl nodejs npm
 
-echo "Running curl to the UI container..."
-curl http://ui:3000/
+# echo "Running curl to the UI container..."
+# curl http://ui:3000/
 
+BASEDIR=$(dirname "$0")
+echo "base dir is ${BASEDIR}"
 
 echo "Installing puppeteer"
 npm i puppeteer
-node puppettest.js
+node ${BASEDIR}/puppettest.js
 
 
 echo "generating test output..."
