@@ -10,9 +10,9 @@ sudo apt update && sudo apt install -y vim wget curl nodejs npm
 BASEDIR=$(dirname "$0")
 echo "base dir is ${BASEDIR}"
 
-echo "Installing puppeteer"
-npm i puppeteer
-node ${BASEDIR}/puppettest.js
+echo "Installing selenium-webdriver"
+npm install selenium-webdriver
+node ${BASEDIR}/selenium-test.js
 
 
 echo "generating test output..."
