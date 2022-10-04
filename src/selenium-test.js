@@ -13,8 +13,8 @@ var capabilities = Capabilities.chrome();
         console.log(`Got the title of the page, ${title}`);
     } catch(e) {
       console.error('Unexpected!', e);
+      exit(1);
     } finally {
         await driver.quit();
-        exit(1);
     }
 })();
